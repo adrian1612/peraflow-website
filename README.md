@@ -4,7 +4,7 @@ The official PeraFlow landing page: an Android personal-finance cashbook with us
 
 ## Design and content
 
-The navy (`#17233c`) and emerald (`#16845b`) identity carries through a product-led hero, an asymmetric feature showcase, a three-step introduction, financial visibility, backup/privacy, Free and Premium, FAQ, and an honest pre-launch CTA.
+The Notion-inspired editorial direction uses white space, ink typography, restrained PeraFlow green (`#14764f`), thin dividers, and compact corners. A centered hero leads into a quiet app showcase, open feature layouts, a three-step introduction, financial visibility, backup/privacy, an accessible Free/Premium comparison table, native FAQ, and an honest pre-launch CTA. No Notion branding or illustrations are copied.
 
 The Summary illustration retains the existing account-card structure and uses explicitly labeled sample amounts. Other financial examples are illustrations, not screenshots or product usage statistics. The page does not imply that PeraFlow connects to banks or moves real money.
 
@@ -43,7 +43,7 @@ Open the local URL printed by the command. The server accepts `--host`, `--port`
 
 Alternatively, serve the root using any static HTTP server. No installation is needed. Edit brand tokens in `brand.css` and keep layout rules in `styles.css`.
 
-Accessibility includes a skip link, one main landmark, named sections, visible keyboard focus, a mobile disclosure menu with Escape support, and native FAQ disclosure controls. Navigation and FAQ content remain usable without JavaScript. Motion is limited to a brief hero entrance and control feedback; reduced-motion preferences disable both and smooth scrolling.
+Accessibility includes a skip link, one main landmark, named sections, visible keyboard focus, a mobile disclosure menu with Escape support, and native FAQ disclosure controls. Navigation and FAQ content remain usable without JavaScript. Motion is limited to control feedback; reduced-motion preferences disable transitions and smooth scrolling.
 
 ## Google Play launch
 

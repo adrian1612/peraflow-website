@@ -1,20 +1,14 @@
-/* Brand foundation: identity tokens here, layout and components in styles.css. */
+/* PeraFlow identity, with an editorial, paper-first presentation. */
 :root {
   color-scheme: light;
-  --navy: #17233c;
-  --navy-deep: #101c31;
-  --green: #16845b;
-  --green-dark: #106b49;
-  --mint: #a1edc9;
-  --ink: #17233c;
-  --muted: #5c687b;
-  --line: #dfe6e9;
+  --ink: #202522;
+  --muted: #626962;
+  --green: #14764f;
+  --green-dark: #0d5b3b;
+  --line: #e2e5df;
   --paper: #fff;
-  --canvas: #f5f7fa;
-  --green-soft: #edf7f2;
-  --red: #b94248;
-  --font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --radius: 24px;
-  --shadow: 0 24px 60px -26px rgb(23 35 60 / 22%);
-  --ease: cubic-bezier(.2, .65, .3, 1);
+  --canvas: #f6f7f3;
+  --green-soft: #edf4ee;
+  --red: #a63f39;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
