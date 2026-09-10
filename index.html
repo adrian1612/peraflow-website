@@ -1,45 +1,356 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#17233C" />
-  <meta name="description" content="PeraFlow is a simple personal finance app for tracking income, expenses, accounts, transfers, reports, and secure backups." />
-  <meta property="og:title" content="PeraFlow — Personal finance that stays understandable" />
-  <meta property="og:description" content="Track your money clearly with accounts, transfers, reports, local-first storage, and optional Google Drive backup." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://adrian1612.github.io/peraflow-website/" />
-  <link rel="canonical" href="https://adrian1612.github.io/peraflow-website/" />
-  <title>PeraFlow — Personal finance that stays understandable</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="brand.css" />
-</head>
-<body>
-  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="#top" aria-label="PeraFlow home"><span class="brand-mark">P</span><span>PeraFlow</span></a><nav class="nav-links" aria-label="Primary navigation"><a href="#features">Features</a><a href="#premium">Premium</a><a href="#privacy">Privacy</a><a href="#faq">FAQ</a></nav><a class="button button-small" href="#download">Get PeraFlow</a></div></header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17233c">
+    <meta name="description" content="Understand your everyday money with PeraFlow, a personal finance app for Android. Track income, expenses, accounts and transfers, with local storage and optional backup. Coming to Google Play.">
+    <meta property="og:title" content="PeraFlow — Personal finance that stays understandable">
+    <meta property="og:description" content="A clearer view of your everyday money. Income, expenses, accounts and backups in one simple Android app. Coming to Google Play.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PeraFlow">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://adrian1612.github.io/peraflow-website/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PeraFlow — Personal finance that stays understandable">
+    <meta name="twitter:description" content="Track your everyday money with a simple personal finance app for Android. Coming to Google Play.">
+    <link rel="canonical" href="https://adrian1612.github.io/peraflow-website/">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+    <title>PeraFlow — Personal finance that stays understandable</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="brand.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Reusable interface icons; no external icon library. -->
+    <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+        <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 8V5a2 2 0 0 0-2-2H5a3 3 0 0 0 0 6h15v11H5a3 3 0 0 1-3-3V6"/><path d="M21 12h-5v5h5M17 14.5h.1"/></symbol>
+        <symbol id="i-transfer" viewBox="0 0 24 24"><path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4"/></symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 3v17h17M8 15v-4m5 4V6m5 9V9"/></symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a5 5 0 1 1 .6-10A7 7 0 0 1 21 11a4 4 0 0 1-3 7M12 21V11m-4 4 4-4 4 4"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 8 3v6c0 6-8 11-8 11S4 17 4 11V5l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+        <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></symbol>
+        <symbol id="i-list" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6m-6 4h6m-6 4h4"/></symbol>
+        <symbol id="i-settings" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18M8 3v6m8 0v6M8 15v6"/></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24"><path d="m5 3 15 9L5 21V3Z"/></symbol>
+      </defs>
+    </svg>
 
-  <main id="top">
-    <section class="hero section"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow">Personal finance that stays understandable</div><h1>Know where your money goes. Keep your finances in flow.</h1><p class="hero-lead">PeraFlow gives you a clean way to track income, expenses, accounts, transfers, reports, and backups—without turning budgeting into another complicated job.</p><div class="hero-actions"><a class="button" href="#download">Get it on Google Play</a><a class="button button-ghost" href="#features">Explore features</a></div><div class="trust-row"><span>✓ Free core tracking</span><span>✓ Optional Premium</span><span>✓ Google Drive backup</span></div></div>
-      <div class="phone-shell" aria-label="PeraFlow Summary screen preview"><div class="phone-top"></div><div class="phone-screen actual-preview"><div class="summary-head"><strong>Summary</strong><span>Across your active accounts</span></div><div class="period-tabs"><span class="active">All</span><span>Daily</span><span>Weekly</span><span>Monthly</span><span>Yearly</span></div><div class="accounts-title">Accounts</div><div class="account-card"><strong>Cash Wallet</strong><div class="account-metrics"><div><span>Cash In</span><b class="cash-in">₱25,000</b></div><div><span>Cash Out</span><b class="cash-out">₱8,420</b></div><div><span>Balance</span><b class="balance-navy">₱16,580</b></div></div></div><div class="account-card"><strong>Bank Account</strong><div class="account-metrics"><div><span>Cash In</span><b class="cash-in">₱40,000</b></div><div><span>Cash Out</span><b class="cash-out">₱12,300</b></div><div><span>Balance</span><b class="balance-navy">₱27,700</b></div></div></div><div class="all-accounts-card"><strong>ALL ACCOUNTS</strong><div class="account-metrics dark-metrics"><div><span>Cash In</span><b>₱65,000</b></div><div><span>Cash Out</span><b>₱20,720</b></div><div><span>Balance</span><b>₱44,280</b></div></div></div></div></div>
-    </div></section>
+    <header class="site-header" id="top">
 
-    <section id="features" class="section section-soft"><div class="container"><div class="section-heading"><div class="eyebrow">Built for everyday use</div><h2>Everything you need to stay on top of your money.</h2><p>Simple enough for daily tracking, structured enough to become your personal financial record.</p></div><div class="feature-grid">
-      <article class="feature-card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 6.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Income & expense tracking</h3><p>Record transactions quickly and keep a clear history of where your money comes from and where it goes.</p></article>
-      <article class="feature-card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><path d="M3 9h18M7 2v6M17 2v6"/></svg></div><h3>Multiple accounts</h3><p>Manage cash, wallets, banks, and other accounts in one place with accurate running balances.</p></article>
-      <article class="feature-card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h13M16 3l4 4-4 4M17 17H4M8 13l-4 4 4 4"/></svg></div><h3>Transfers</h3><p>Move money between accounts without treating transfers as income or expenses.</p></article>
-      <article class="feature-card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/></svg></div><h3>Reports</h3><p>See spending patterns, income totals, and financial activity in a more useful monthly view.</p></article>
-      <article class="feature-card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a5 5 0 1 1 1.2-9.85A7 7 0 0 1 21 12a4 4 0 0 1-4 6H7Z"/><path d="M12 11v8M9 16l3 3 3-3"/></svg></div><h3>Backup & restore</h3><p>Create local backups and optionally keep backups in Google Drive for easier recovery.</p></article>
-      <article class="feature-card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3>Privacy & control</h3><p>Your finance records stay on your device. Cloud backup is optional and used only when you choose it.</p></article>
-    </div></div></section>
+      <div class="container nav-wrap">
+        <a class="brand" href="#top" aria-label="PeraFlow home"><img src="assets/appicon-peraflow.webp" width="42" height="42" alt="" fetchpriority="high"><span>Pera<span class="brand-flow">Flow</span></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden><span class="menu-lines" aria-hidden="true"></span><span class="menu-label">Menu</span></button>
 
-    <section id="premium" class="section"><div class="container premium-grid"><div><div class="eyebrow">PeraFlow Premium</div><h2>More control when you need more than the basics.</h2><p class="section-copy">The free version keeps core finance tracking useful. Premium removes ads and unlocks higher-value features for users who want PeraFlow to do more.</p><ul class="check-list"><li>Unlimited active accounts</li><li>Full reports</li><li>Automatic Google Drive backup</li><li>No ads</li></ul></div><div class="pricing-card"><div class="pricing-badge">Flexible choices</div><div class="price-row"><span>Monthly Premium</span><strong>Localized in Google Play</strong></div><div class="price-row"><span>Lifetime Premium</span><strong>One-time purchase</strong></div><p>Prices shown inside PeraFlow come directly from Google Play and may vary by country or region.</p></div></div></section>
-    <section id="privacy" class="section section-dark"><div class="container privacy-grid"><div><div class="eyebrow eyebrow-light">Privacy & control</div><h2>Your financial app should be useful without feeling intrusive.</h2></div><div class="privacy-copy"><p>PeraFlow stores your finance data locally on your device. Google Drive backup is optional and initiated only when you choose to use it.</p><p>Advertising and consent are handled using Google’s supported consent tools, and eligible users can reopen advertising privacy choices from Settings.</p><a class="text-link" href="https://adrian1612.github.io/peraflow-privacy/" target="_blank" rel="noopener">Read the Privacy Policy →</a></div></div></section>
-    <section id="faq" class="section"><div class="container narrow"><div class="section-heading left"><div class="eyebrow">FAQ</div><h2>Quick answers.</h2></div><div class="faq-list"><details open><summary>Is PeraFlow free?</summary><p>Yes. Core money tracking remains available for free. Premium adds unlimited accounts, full reports, automatic Google Drive backup, and removes ads.</p></details><details><summary>Does PeraFlow require an account?</summary><p>PeraFlow is designed around local personal finance data. Google authorization is only needed when you choose Google Drive backup features.</p></details><details><summary>Can I back up my data?</summary><p>Yes. PeraFlow supports local backup and restore, plus optional Google Drive backup and restore.</p></details><details><summary>Where can I download PeraFlow?</summary><p>PeraFlow is currently progressing through Google Play testing. The Google Play download link will appear here once the listing is available.</p></details></div></div></section>
-    <section id="download" class="section cta-section"><div class="container cta-card"><div><div class="eyebrow">Coming to Google Play</div><h2>Make your money easier to understand.</h2><p>PeraFlow is currently in Google Play testing. The public download button will be enabled when the store listing becomes available.</p></div><button class="button button-disabled" type="button" disabled>Google Play — Coming soon</button></div></section>
-  </main>
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand-footer" href="#top"><span class="brand-mark">P</span><span>PeraFlow</span></a><p>Simple personal finance, built for everyday use.</p></div><div class="footer-links"><a href="#features">Features</a><a href="#premium">Premium</a><a href="https://adrian1612.github.io/peraflow-privacy/" target="_blank" rel="noopener">Privacy Policy</a></div><div class="footer-meta"><span>© <span id="year"></span> PeraFlow</span><span>Made for Android</span></div></div></footer>
-  <script src="script.js"></script>
-</body>
+        <nav class="nav-links" id="primary-nav" aria-label="Main navigation"><a href="#features">The app</a><a href="#how-it-works">How it works</a><a href="#premium">Free &amp; Premium</a><a href="#faq">FAQ</a></nav>
+        <a class="button button-small nav-cta" href="#download" data-play-link><span data-play-copy>Coming soon</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <section class="hero" aria-labelledby="hero-title">
+
+        <div class="container hero-grid">
+
+          <div class="hero-copy">
+
+            <div class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> YOUR EVERYDAY MONEY, MADE CLEAR</div>
+            <h1 id="hero-title">Personal finance<br>that stays<br><span>understandable.</span></h1>
+            <p class="hero-lead">Meet PeraFlow. A simple Android cashbook for your income, expenses, and accounts. Less guesswork. A clearer picture of your money.</p>
+
+            <div class="hero-actions"><a class="button store-button" href="#download" data-play-link><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><span><small data-play-kicker>COMING SOON TO</small><strong>Google Play</strong></span></a><a class="quiet-link" href="#features">Take a closer look <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+
+            <div class="hero-notes"><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Free core tracking</span><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Finance data stored locally</span></div>
+          </div>
+
+          <figure class="hero-product">
+
+            <div class="product-stage">
+
+              <div class="stage-label"><span>YOUR MONEY AT A GLANCE</span><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></div>
+              <!-- Based on the existing Summary preview. These are illustrative sample amounts. -->
+
+              <div class="phone-shell" role="img" aria-label="Illustrative PeraFlow Summary screen. Sample Cash Wallet balance: 16,580 pesos. Bank Account: 27,700 pesos. Combined balance: 44,280 pesos.">
+
+                <div class="phone-camera"></div>
+
+                <div class="phone-screen" aria-hidden="true">
+
+                  <div class="phone-status"><span>9:30</span><span>▰ ▰ ▰</span></div>
+
+                  <div class="summary-head"><strong>Summary</strong><span>Across your active accounts</span></div>
+
+                  <div class="period-tabs"><span class="active">All</span><span>Daily</span><span>Weekly</span><span>Monthly</span><span>Yearly</span></div>
+
+                  <div class="accounts-title">Accounts <span>2 active</span></div>
+
+                  <div class="account-card"><strong><span class="account-dot wallet-dot"></span>Cash Wallet</strong>
+                    <div class="account-metrics">
+                      <div><span>Cash In</span><b class="cash-in">₱25,000</b></div>
+                      <div><span>Cash Out</span><b class="cash-out">₱8,420</b></div>
+                      <div><span>Balance</span><b>₱16,580</b></div>
+                    </div>
+                  </div>
+
+                  <div class="account-card"><strong><span class="account-dot bank-dot"></span>Bank Account</strong>
+                    <div class="account-metrics">
+                      <div><span>Cash In</span><b class="cash-in">₱40,000</b></div>
+                      <div><span>Cash Out</span><b class="cash-out">₱12,300</b></div>
+                      <div><span>Balance</span><b>₱27,700</b></div>
+                    </div>
+                  </div>
+
+                  <div class="all-accounts-card"><strong>ALL ACCOUNTS</strong>
+                    <div class="account-metrics">
+                      <div><span>Cash In</span><b class="cash-in">₱65,000</b></div>
+                      <div><span>Cash Out</span><b class="cash-out">₱20,720</b></div>
+                      <div><span>Balance</span><b>₱44,280</b></div>
+                    </div>
+                  </div>
+
+                  <div class="phone-nav"><span><svg class="icon"><use href="#i-list"/></svg>Transactions</span><span class="selected"><svg class="icon"><use href="#i-home"/></svg>Summary</span><span><svg class="icon"><use href="#i-transfer"/></svg>Transfer</span><span><svg class="icon"><use href="#i-wallet"/></svg>Accounts</span><span><svg class="icon"><use href="#i-settings"/></svg>Settings</span></div>
+
+                  <div class="phone-home"></div>
+                </div>
+              </div>
+
+              <div class="stage-footer"><span>Less guesswork.<br><strong>More understanding.</strong></span><span class="stage-mark" aria-hidden="true">PeraFlow</span></div>
+            </div>
+            <figcaption>Illustrative app preview · Sample amounts</figcaption>
+          </figure>
+        </div>
+
+        <div class="container benefit-strip">
+          <div><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span>Know what comes in.<br><strong>See what goes out.</strong></span></div>
+          <div><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg><span>Cash, bank, and wallets.<br><strong>One clear overview.</strong></span></div>
+          <div><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>Your financial records.<br><strong>On your device.</strong></span></div>
+        </div>
+      </section>
+
+      <section class="section features-section" id="features" aria-labelledby="features-title">
+
+        <div class="container">
+
+          <div class="section-heading split-heading">
+            <div><p class="eyebrow">A PLACE FOR EVERY PESO</p>
+              <h2 id="features-title">Life moves.<br>Keep your money in view.</h2>
+            </div>
+            <p>From your morning coffee to your next payday, give every transaction a place and every account a clear balance.</p>
+          </div>
+
+          <div class="feature-grid">
+
+            <article class="feature-card feature-wide">
+              <div class="feature-copy"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg></span><h3>The everyday details,<br>all together.</h3>
+                <p>Track income and expenses, add categories, and keep a useful record of where your money goes.</p>
+              </div>
+              <div class="ledger-example" role="img" aria-label="Illustrative transaction history: salary income of 25,000 pesos, groceries expense of 1,250 pesos, and transport expense of 150 pesos.">
+                <div class="example-header">Everyday transactions <span>EXAMPLE</span></div>
+                <div class="ledger-row"><span class="ledger-symbol income-symbol">+</span><span><strong>Salary</strong><small>Income · Bank Account</small></span><b class="cash-in">+₱25,000</b></div>
+                <div class="ledger-row"><span class="ledger-symbol">−</span><span><strong>Groceries</strong><small>Food · Cash Wallet</small></span><b>−₱1,250</b></div>
+                <div class="ledger-row"><span class="ledger-symbol">−</span><span><strong>Transport</strong><small>Travel · Cash Wallet</small></span><b>−₱150</b></div>
+              </div>
+            </article>
+
+            <article class="feature-card accounts-feature"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span><h3>Different accounts.<br>One place to look.</h3>
+              <p>Keep cash, bank accounts, and wallets organized with their own balances and opening amounts.</p>
+              <div class="account-stack" aria-hidden="true"><span><i class="account-dot wallet-dot"></i>Cash Wallet</span><span><i class="account-dot bank-dot"></i>Bank Account</span><span><i class="account-dot savings-dot"></i>Savings</span></div>
+            </article>
+
+            <article class="feature-card transfer-feature">
+              <div><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-transfer"/></svg></span><h3>Move money.<br>Keep the story straight.</h3>
+                <p>Record transfers between accounts without counting them as income or expenses.</p>
+              </div>
+              <div class="transfer-example" aria-hidden="true"><span><svg class="icon"><use href="#i-wallet"/></svg>Cash Wallet</span><svg class="icon transfer-arrows"><use href="#i-transfer"/></svg><span><svg class="icon"><use href="#i-wallet"/></svg>Bank Account</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section how-section" id="how-it-works" aria-labelledby="how-title">
+
+        <div class="container">
+          <div class="section-heading"><p class="eyebrow">A SMALL HABIT. A CLEARER PICTURE.</p>
+            <h2 id="how-title">Make sense of money,<br>one day at a time.</h2>
+          </div>
+          <ol class="steps">
+            <li><span class="step-number">01</span><h3>Start with what you have.</h3>
+              <p>Add your accounts and opening balances. Give your records a clear starting point.</p>
+            </li>
+            <li><span class="step-number">02</span><h3>Record as life happens.</h3>
+              <p>Add income, expenses, and transfers. Use categories to keep the details organized.</p>
+            </li>
+            <li><span class="step-number">03</span><h3>See the bigger picture.</h3>
+              <p>Review your balances and financial activity. Understand where your money went.</p>
+            </li>
+          </ol>
+          <figure class="official-preview"><img src="assets/banner-peraflow.webp" width="1600" height="783" alt="Official PeraFlow artwork showing the Summary and Transactions screens, account balances, and cash-in and cash-out entries." loading="lazy" decoding="async"><figcaption><span>MEET PERAFLOW</span> Official app artwork · Interface may evolve before launch</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section reports-section" id="reports" aria-labelledby="reports-title">
+
+        <div class="container reports-grid">
+          <div class="report-example" role="img" aria-label="Illustrative financial overview: cash in 65,000 pesos, cash out 20,720 pesos, and balance 44,280 pesos. Sample amounts, not a screenshot.">
+            <div class="example-header">The bigger picture <span>SAMPLE AMOUNTS</span></div>
+            <div class="report-balance"><span>Know where you stand</span><strong>₱44,280<span>.00</span></strong><small>Balance across your accounts</small></div>
+            <div class="report-bar">
+              <div class="report-bar-label"><span>Cash in</span><strong>₱65,000</strong></div>
+              <div class="bar-track"><span class="bar-income"></span></div>
+            </div>
+            <div class="report-bar">
+              <div class="report-bar-label"><span>Cash out</span><strong>₱20,720</strong></div>
+              <div class="bar-track"><span class="bar-expense"></span></div>
+            </div>
+            <p class="example-note">Illustrative financial overview</p>
+          </div>
+          <div class="report-copy"><p class="eyebrow">FROM RECORDS TO UNDERSTANDING</p>
+            <h2 id="reports-title">Your numbers.<br>A little more perspective.</h2>
+            <p>Knowing your balance is a start. Reviewing your income, expenses, and financial activity helps you understand how you got there.</p>
+            <ul class="check-list">
+              <li>Keep track of money in and money out</li>
+              <li>Review activity across your accounts</li>
+              <li>Explore full reports with Premium</li>
+            </ul>
+            <a class="quiet-link" href="#premium">See what’s included <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </section>
+
+      <section class="section privacy-section" id="privacy" aria-labelledby="privacy-title">
+
+        <div class="container privacy-grid">
+          <div><p class="eyebrow">YOUR RECORDS. YOUR CHOICE.</p>
+            <h2 id="privacy-title">Close to you.<br>Backed up your way.</h2>
+            <p class="privacy-intro">Your financial records are stored locally on your device. Choose when and how to keep a backup.</p>
+            <a class="quiet-link light-link" href="https://adrian1612.github.io/peraflow-privacy/">Read the Privacy Policy <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+          <div class="privacy-options">
+            <article><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+              <div><h3>Local by design</h3>
+                <p>Your day-to-day financial records live on your device.</p>
+              </div>
+            </article>
+            <article><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+              <div><h3>A backup you can keep</h3>
+                <p>Create and restore a local backup of your PeraFlow data.</p>
+              </div>
+            </article>
+            <article><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg>
+              <div><h3>Google Drive, when you choose</h3>
+                <p>Use optional Google Drive backup and restore. Premium adds automatic backup when enabled.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section premium-section" id="premium" aria-labelledby="premium-title">
+
+        <div class="container">
+          <div class="section-heading"><p class="eyebrow">USEFUL FROM DAY ONE</p>
+            <h2 id="premium-title">Start free.<br>Make room for more.</h2>
+            <p>A useful everyday finance tracker comes first.<br>Premium is there when you want the extras.</p>
+          </div>
+          <div class="plans">
+            <article class="plan-card">
+              <div class="plan-heading"><span class="plan-label">THE EVERYDAY ESSENTIALS</span><h3>PeraFlow Free</h3>
+                <p>Build the habit. Keep your money organized.</p>
+              </div>
+              <ul class="check-list">
+                <li>Income and expense tracking</li>
+                <li>Multiple accounts and balances</li>
+                <li>Transfers, categories, and opening balances</li>
+                <li>Local backup and restore</li>
+              </ul>
+              <div class="plan-footer"><strong>Core tracking, for free.</strong><span>Includes ads · Active account limits apply</span></div>
+            </article>
+            <article class="plan-card premium-card">
+              <div class="plan-heading"><span class="plan-label">A LITTLE MORE PERAFLOW</span><h3>PeraFlow Premium</h3>
+                <p>All the essentials, with more room and fewer interruptions.</p>
+              </div>
+              <ul class="check-list">
+                <li>Unlimited active accounts</li>
+                <li>Full financial reports</li>
+                <li>Automatic Google Drive backup</li>
+                <li>No ads</li>
+              </ul>
+              <div class="plan-footer"><strong>Monthly or lifetime.</strong><span>Localized pricing through Google Play</span></div>
+            </article>
+          </div>
+          <p class="plan-note">Optional Google Drive backup and restore are also supported. Free users can access Drive backup through rewarded ads; Premium adds automatic backup. Current options and purchase details appear in the app.</p>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+
+        <div class="container faq-grid">
+          <div><p class="eyebrow">A FEW GOOD QUESTIONS</p>
+            <h2 id="faq-title">Let’s clear<br>things up.</h2>
+            <p>Getting to know PeraFlow.</p>
+          </div>
+          <div class="faq-list">
+
+            <details><summary>Is PeraFlow free to use?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>Yes. Core finance tracking is free, including income, expenses, accounts, transfers, categories, opening balances, and local backup and restore. Free use includes ads and active account limits. Premium is optional.</p>
+            </details>
+
+            <details><summary>Do I need an account to get started?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>You don’t need a PeraFlow account for local finance tracking. Google authorization is needed only if you choose to use Google Drive backup and restore.</p>
+            </details>
+
+            <details><summary>Is PeraFlow connected to my bank?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>PeraFlow is a personal cashbook. You record your transactions and transfers yourself. Accounts in the app help organize your records; they don’t connect to your bank or move real money.</p>
+            </details>
+
+            <details><summary>How can I back up or restore my data?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>Create a local backup, or choose optional Google Drive backup and restore. Free users can access Drive backup through rewarded ads. Premium includes automatic Google Drive backup when enabled. Keep a backup before changing or resetting your device.</p>
+            </details>
+
+            <details><summary>What does Premium add?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>Premium adds unlimited active accounts, full reports, automatic Google Drive backup, and no ads. Monthly and lifetime purchase options use localized pricing from Google Play, shown in the app.</p>
+            </details>
+
+            <details><summary>Where can I download PeraFlow?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p data-launch-answer>PeraFlow is coming to Google Play for Android. It isn’t publicly available yet. The download link will appear here once the public listing is ready.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="download-section" id="download" aria-labelledby="download-title">
+
+        <div class="container download-card">
+          <div class="download-copy"><img src="assets/appicon-peraflow.webp" width="88" height="88" alt="" loading="lazy" decoding="async"><p class="eyebrow">LESS GUESSWORK. MORE CLARITY.</p>
+            <h2 id="download-title">Get to know<br>your everyday money.</h2>
+            <p data-launch-description>PeraFlow is coming to Android.<br>Find it here when the Google Play listing is public.</p>
+          </div>
+          <div class="download-action">
+            <div class="store-status" data-store-status><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><span><small>COMING SOON TO</small><strong>Google Play</strong></span></div>
+            <a class="button store-button" data-live-download hidden><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><span><small>GET IT ON</small><strong>Google Play</strong></span></a><p>Made for Android.<br>Free to start. Premium is optional.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div><a class="brand" href="#top" aria-label="PeraFlow home"><img src="assets/appicon-peraflow.webp" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Pera<span class="brand-flow">Flow</span></span></a><p>Personal finance that stays understandable.</p>
+          </div>
+          <nav class="footer-links" aria-label="Footer navigation"><a href="#features">The app</a><a href="#premium">Free &amp; Premium</a><a href="#faq">FAQ</a><a href="https://adrian1612.github.io/peraflow-privacy/">Privacy Policy</a></nav>
+        </div>
+        <div class="footer-bottom"><span>© <span id="year">2026</span> PeraFlow</span><span>Track. Manage. Grow.</span></div>
+      </div>
+    </footer>
+  </body>
 </html>
