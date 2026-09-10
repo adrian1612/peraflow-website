@@ -1,0 +1,9 @@
+{
+  "name": "peraflow-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static PeraFlow website. No production dependencies or build step.",
+  "scripts": {
+    "dev": "node tools/preview.mjs"
+  }
+}
